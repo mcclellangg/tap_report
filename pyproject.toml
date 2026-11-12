@@ -1,0 +1,9 @@
+[project]
+name = "tap-report-spa"
+version = "0.1.0"
+description = "An spa where you click a button and send count via form."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "flask>=3.1.3",
+]

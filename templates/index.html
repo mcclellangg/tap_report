@@ -1,0 +1,25 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preview: Mobile Demo</title>
+
+    <!-- base sheets -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='base.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='colors.css') }}"
+    />
+
+    <!-- bootstrap-icons -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> -->
+  </head>
+  <body style="background-color: var(--n500);">
+    {% include 'components/header.html' %}
+  </body>
+</html>
