@@ -1,7 +1,7 @@
 [project]
-name = "tap-report-spa"
+name = "tap-report"
 version = "0.1.0"
-description = "An spa where you click a button and send count via form."
+description = "An SPA where you click a button and send count via form."
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
