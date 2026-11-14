@@ -1,7 +1,17 @@
 /* static/script.js */
 
-function tapCounter() {
-  console.log("Hello from script.js!");
+// GLOBALS
+let counter = 0;
+
+// FUNCTIONS
+function updateCount(c) {
+  const display = document.getElementById("countDisplay");
+  display.textContent = c;
 }
 
-tapCounter();
+function tapCounter() {
+  counter++;
+  const message = `Total clicks: ${counter}`;
+  console.log("Click event occurred, " + message);
+  updateCount(counter);
+}
