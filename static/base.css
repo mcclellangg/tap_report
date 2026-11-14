@@ -13,8 +13,6 @@
 }
 :root {
   --width: 65vw;
-  /* TODO: compare with using hardcoded size */
-  --gap: calc(1rem * 12.5 / 16);
 }
 
 html {
@@ -51,4 +49,5 @@ body {
 .content > * {
   width: 98vw;
   max-width: var(--width);
+  margin-bottom: 48px;
 }
