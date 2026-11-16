@@ -1,7 +1,49 @@
 <!-- components/contact_form.html -->
-<style></style>
+<style>
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .Xcontact-layout > * {
+    outline: 1px red solid;
+  }
+
+  .contact-form {
+    background-color: var(--n700);
+    display: grid;
+    grid-template-rows: 1fr repeat;
+  }
+
+  .contact-form > input,
+  textarea {
+    margin-bottom: 32px;
+  }
+
+  .contact-form > input {
+    font-size: 18px;
+  }
+
+  .contact-form > label {
+    margin-bottom: 8px;
+    color: var(--n100);
+    font-size: 18px;
+    font-weight: 600;
+  }
+</style>
 
 <div class="content" style="background-color: var(--n600)">
   <h2>Contact Form</h2>
-  <!-- TODO: Add form using grid -->
+  <div class="contact-layout">
+    <div>Col A</div>
+    <form class="contact-form">
+      <label>Name</label>
+      <input type="text" />
+      <label>Email</label>
+      <input type="text" />
+      <label>Message</label>
+      <textarea></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </div>
