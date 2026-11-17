@@ -1,0 +1,40 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Install project dependencies
+        run: uv sync --locked
+
+      - name: Build static site
+        run: uv run freeze.py
+
+      - name: Upload site for GitHub Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: build/
+
+      - name: Deploy site
+        id: deployment
+        uses: actions/deploy-pages@v4
+
