@@ -11,8 +11,16 @@
 
   .contact-form {
     background-color: var(--n700);
+    padding: 8px;
+    border-radius: 4px;
     display: grid;
-    grid-template-rows: 1fr repeat;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-form > label,
+  .contact-form > input,
+  .contact-form > textarea {
+    grid-column: 1 / -1;
   }
 
   .contact-form > input,
@@ -24,18 +32,35 @@
     font-size: 18px;
   }
 
+  .contact-form > input:nth-of-type(-n + 2) {
+    height: 32px;
+  }
+
+  .contact-form > textarea {
+    height: 128px;
+  }
+
   .contact-form > label {
     margin-bottom: 8px;
     color: var(--n100);
     font-size: 18px;
     font-weight: 600;
   }
+
+  .contact-form > button {
+    grid-column: 2;
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+  }
 </style>
 
 <div class="content" style="background-color: var(--n600)">
   <h2>Contact Form</h2>
   <div class="contact-layout">
-    <div>Col A</div>
+    <div style="color: var(--n200); font-size: 18px">
+      Submit your taps here!
+    </div>
     <form class="contact-form">
       <label>Name</label>
       <input type="text" />

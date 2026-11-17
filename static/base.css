@@ -51,3 +51,15 @@ body {
   max-width: var(--width);
   margin-bottom: 48px;
 }
+
+/* Utilities */
+mb-0 {
+  margin-bottom: 0px !important;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  :root {
+    --width: 95vw;
+  }
+}
