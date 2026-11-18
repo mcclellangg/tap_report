@@ -30,7 +30,7 @@ jobs:
       - name: Build static site
         run: uv run freeze.py
 
-         - name: Test static assets
+      - name: Test static assets
         id: asset_test
         continue-on-error: true
         run: uv run pytest tests/test_assets.py tests/test_build_assets.py
