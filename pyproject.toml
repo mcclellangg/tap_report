@@ -9,3 +9,6 @@ dependencies = [
     "frozen-flask>=1.0.2",
     "pytest>=9.2.0",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
