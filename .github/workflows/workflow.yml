@@ -30,6 +30,15 @@ jobs:
       - name: Build static site
         run: uv run freeze.py
 
+         - name: Test static assets
+        id: asset_test
+        continue-on-error: true
+        run: uv run pytest tests/test_assets.py tests/test_build_assets.py
+
+      - name: Log asset test failure
+        if: steps.asset_test.outcome == 'failure'
+        run: echo "::error title=Static asset tests failed::One or more static asset tests failed (see the 'Test static assets' step for details). Deploying anyway."
+
       - name: Upload site for GitHub Pages
         uses: actions/upload-pages-artifact@v4
         with:
